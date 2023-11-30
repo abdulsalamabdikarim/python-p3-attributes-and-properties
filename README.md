@@ -5,30 +5,30 @@
 - Differentiate between variables, attributes, and properties.
 - Use the `property()` function to create properties and validate input.
 
-***
+---
 
 ## Key Vocab
 
 - **Class**: a bundle of data and functionality. Can be copied and modified to
-accomplish a wide variety of programming tasks.
+  accomplish a wide variety of programming tasks.
 - **Initialize**: create a working copy of a class using its `__init__` method.
 - **Instance**: one specific working copy of a class. It is created when a
-class's `__init__` method is called.
+  class's `__init__` method is called.
 - **Object**: the more common name for an instance. The two can usually be used
-interchangeably.
+  interchangeably.
 - **Object-Oriented Programming**: programming that is oriented around data
-(made mobile and changeable in **objects**) rather than functionality. Python is
-an object-oriented programming language.
+  (made mobile and changeable in **objects**) rather than functionality. Python is
+  an object-oriented programming language.
 - **Function**: a series of steps that create, transform, and move data.
 - **Method**: a function that is defined inside of a class.
 - **Magic Method**: a special type of method in Python that starts and ends with
-double underscores. These methods are called on objects under certain conditions
-without needing to use their names explicitly. Also called **dunder methods**
-(for **d**ouble **under**score).
+  double underscores. These methods are called on objects under certain conditions
+  without needing to use their names explicitly. Also called **dunder methods**
+  (for **d**ouble **under**score).
 - **Attribute**: variables that belong to an object.
 - **Property**: attributes that are controlled by methods.
 
-***
+---
 
 ## Introduction
 
@@ -39,7 +39,7 @@ the `self` keyword to modify its **attributes**.
 In this lesson, we will continue to explore attributes and **properties**, a
 special type of attribute.
 
-***
+---
 
 ## Class Attributes vs Instance Attributes
 
@@ -94,7 +94,7 @@ attribute?</em></summary>
 </details>
 <br/>
 
-***
+---
 
 ## Setting and Getting Attributes
 
@@ -106,7 +106,7 @@ certainly encounter them in your software career:
 - _Public_ members are available to anyone that can access the class.
 - _Private_ members are available to the class that instantiated them.
 - _Protected_ members are available to the class that instantiated them and any
-object that inherits from that class, but is not accessible otherwise.
+  object that inherits from that class, but is not accessible otherwise.
 
 Python does not make the distinction between public, private, and protected.
 This makes it very easy for us to manipulate the members of a class or object
@@ -146,7 +146,7 @@ Python also provides us a few built-in functions to manipulate attributes:
 
 - `getattr()` retrieves the value of an attribute.
 - `setattr()` changes the value of an attribute, just as you would with dot
-notation.
+  notation.
 - `hasattr()` checks for the presence of an attribute.
 - `delattr()` removes an attribute from a class or object.
 
@@ -192,7 +192,7 @@ presence of an attribute?</em></summary>
 </details>
 <br/>
 
-***
+---
 
 ## Properties
 
@@ -241,9 +241,9 @@ class Human:
 Let's break this down a bit:
 
 - `get_age()` is compiled by the `property` function and prints `"Retrieving
-  age"` when we access age through dot notation or an `attr()` function.
+age"` when we access age through dot notation or an `attr()` function.
 - `set_age()` is compiled by the `property()` function and prints `"Setting age
-  to { age }"` when we change our human's age.
+to { age }"` when we change our human's age.
 - The `property()` function compiles our getter and setter and calls them
   whenever anyone accesses our human's age.
 
@@ -256,8 +256,7 @@ values.
 > NOTE: This is still not a true _private_ value; you can still manipulate it
 > with dot notation and `attr()` functions (though you shouldn't!)
 
-There's still a problem- we're not checking if the age is a number between 0 and
-120. Let's make one last change to finish our `Human` class:
+There's still a problem- we're not checking if the age is a number between 0 and 120. Let's make one last change to finish our `Human` class:
 
 ```py
 class Human:
@@ -311,7 +310,7 @@ guarantee this will happen, we should configure a property.</p>
 For more on properties, check out [the Python 3 documentation on the property()
 function][python docs property].
 
-***
+---
 
 ## Instructions
 
@@ -321,15 +320,13 @@ need to complete the following tasks:
 ### `Dog` and `lib/dog.py`
 
 1. Define a `name` property for your `Dog` class. The name must be of type `str`
-and between 1 and 25 characters. Your `__init__` method should receive a default
-argument for `name`.
-    - If the name is invalid, the setter method should `print()` "Name must be
-string between 1 and 25 characters."
+   and between 1 and 25 characters. Your `__init__` method should receive a default
+   argument for `name`. - If the name is invalid, the setter method should `print()` "Name must be
+   string between 1 and 25 characters."
 2. Define a `breed` property for your `Dog` class. Your `__init__` method should
-   receive a default argument for `breed`.
-    - If the breed is invalid, the setter method should `print()` "Breed must be
-in list of approved breeds." The breed must be in the following list of dog
-breeds:
+   receive a default argument for `breed`. - If the breed is invalid, the setter method should `print()` "Breed must be
+   in list of approved breeds." The breed must be in the following list of dog
+   breeds:
 
 ```py
 approved_breeds = ["Mastiff", "Chihuahua", "Corgi", "Shar Pei", "Beagle", "French Bulldog", "Pug", "Pointer"]
@@ -341,16 +338,14 @@ Breeds](https://curriculum-content.s3.amazonaws.com/module-1/ruby-oo-fundamental
 ### `Person` and `lib/person.py`
 
 1. Define a `name` property for your `Person` class. The name must be of type
-`str` and between 1 and 25 characters. The name should be converted to [title
-case](https://www.w3schools.com/python/ref_string_title.asp#:~:text=The%20title()%20method%20returns,be%20converted%20to%20upper%20case.)
-before it is saved. Your `__init__` method should receive a default argument for
-`name`.
-    - If the name is invalid, the setter method should `print()` "Name must be
-string between 1 and 25 characters."
+   `str` and between 1 and 25 characters. The name should be converted to [title
+   case](<https://www.w3schools.com/python/ref_string_title.asp#:~:text=The%20title()%20method%20returns,be%20converted%20to%20upper%20case.>)
+   before it is saved. Your `__init__` method should receive a default argument for
+   `name`. - If the name is invalid, the setter method should `print()` "Name must be
+   string between 1 and 25 characters."
 2. Define a `job` property for your `Person` class. Your `__init__` method should
-   receive a default argument for `job`.
-    - If the job is invalid, the setter method should `print()` "Job must be in
-list of approved jobs." The job must be in the following list of jobs:
+   receive a default argument for `job`. - If the job is invalid, the setter method should `print()` "Job must be in
+   list of approved jobs." The job must be in the following list of jobs:
 
 ```py
 approved_jobs = ["Admin", "Customer Service", "Human Resources", "ITC", "Production", "Legal", "Finance", "Sales", "General Management", "Research & Development", "Marketing", "Purchasing"]
@@ -360,7 +355,7 @@ approved_jobs = ["Admin", "Customer Service", "Human Resources", "ITC", "Product
 > properties, remember to include set values in `__init__()` using the
 > _property_ name and not the protected _attribute_ name.**
 
-***
+---
 
 ## Conclusion
 
@@ -371,7 +366,7 @@ the types of changes that are saved to our objects and classes. Python's
 `property()` function gives us the ability to validate attributes before they
 are saved to the classes and objects we've worked so hard to make.
 
-***
+---
 
 ## Resources
 
@@ -381,5 +376,4 @@ are saved to the classes and objects we've worked so hard to make.
 - [Python property() function -
   GeeksforGeeks](https://www.geeksforgeeks.org/python-property-function/)
 
-[python docs property]:
-    https://docs.python.org/3/library/functions.html#property
+[python docs property]: https://docs.python.org/3/library/functions.html#property
